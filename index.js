@@ -1,8 +1,8 @@
 var List = React.createClass({
 
   shouldComponentUpdate: function(nextProps) {
-    console.log('shouldComponentUpdate:', nextProps.items === this.props.items)
-    return nextProps !== this.props;
+    console.log('shouldComponentUpdate:', nextProps.items !== this.props.items)
+    return nextProps.items !== this.props.items;
   },
 
   _renderList: function() {
@@ -43,6 +43,7 @@ var ListContainer = React.createClass({
     }, 500);
 
     var timeout = setTimeout(function() {
+      timeout = null;
       clearInterval(interval);
     }, 20000)
   },
