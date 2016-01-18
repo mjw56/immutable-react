@@ -6,7 +6,7 @@ var List = React.createClass({
   },
 
   _renderList: function() {
-    return this.props.items.toJS().map(function(item, i) {
+    return this.props.items.map(function(item, i) {
       return React.createElement('li', { key: i}, item);
     });
   },
